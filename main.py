@@ -6,18 +6,9 @@ TOKEN = "7189697687:AAGB9yCldmyNwYbf3wsCp8Ed0IzOnnQfISk"
 bot = Bot(token=TOKEN)
 
 dp = Dispatcher()
+from handlers.user_privat import user_router
 
-
-@dp.message(CommandStart())
-async def start(message: types.Message):
-    await message.answer("Привет, это бот по продаже ключей стим")
-
-
-@dp.message()
-async def echo(message: types.Message):
-    await message.answer('Бот находится в разработке')
-    user_text = message.text
-    await message.answer(user_text)
+dp.include_router(user_router)
 
 
 async def main():
