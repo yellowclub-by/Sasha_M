@@ -1,16 +1,16 @@
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 
-back_btn = KeyboardButton(text="Назад")
+back_btn = KeyboardButton(text="Назад🔙")
 
 start_kb = ReplyKeyboardMarkup(
     keyboard=[
         [
-            KeyboardButton(text='Каталог'),
-            KeyboardButton(text='Про нас'),
+            KeyboardButton(text='Каталог😎'),
+            KeyboardButton(text='О нас🦃'),
         ],
         [
-            KeyboardButton(text='Контакты'),
-            KeyboardButton(text='Филиалы')
+            KeyboardButton(text='Контакты🔔'),
+            KeyboardButton(text='Филиалы🎐')
         ]
     ],
     resize_keyboard=True,
@@ -22,12 +22,12 @@ start_kb = ReplyKeyboardMarkup(
 catalog_kb = ReplyKeyboardMarkup(
     keyboard=[
         [
-            KeyboardButton(text='Steam'),
-            KeyboardButton(text='EGS')
+            KeyboardButton(text='Steam❤️'),
+            KeyboardButton(text='EGS💫')
         ],
         [
-            KeyboardButton(text='Ubisoft'),
-            KeyboardButton(text='EA')
+            KeyboardButton(text='Ubisoft😂'),
+            KeyboardButton(text='EA🙌')
         ],
         [
             back_btn

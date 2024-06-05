@@ -3,7 +3,7 @@ from aiogram import Bot, Dispatcher, types
 
 
 TOKEN = "7189697687:AAGB9yCldmyNwYbf3wsCp8Ed0IzOnnQfISk"
-bot = Bot(token=TOKEN)
+bot = Bot(token=TOKEN, parse_mode='HTML')
 
 dp = Dispatcher()
 from handlers.user_privat import user_router

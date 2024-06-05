@@ -5,25 +5,29 @@ from aiogram.types import FSInputFile
 catalog_router = Router()
 
 
-@catalog_router.message(F.text.lower() == 'steam')
+@catalog_router.message(F.text.lower() == 'steam❤️')
 async def catalog_st(message: types.Message):
     photo = FSInputFile(r'img\catalog\steam.jpg')
-    await message.answer_photo(photo, caption='Стоимость ключей от 50р')
+    text = '<b>Стоимость ключей от 50р</b>😎'
+    await message.answer_photo(photo, caption=text)
 
 
-@catalog_router.message(F.text.lower() == 'egs')
+@catalog_router.message(F.text.lower() == 'egs💫')
 async def catalog_egs(message: types.Message):
     photo = FSInputFile(r'img\catalog\egs.jpg')
-    await message.answer_photo(photo, caption='Стоимость ключей от 100р')
+    text = '<b>Стоимость ключей от 100р</b>😊'
+    await message.answer_photo(photo, caption=text)
 
 
-@catalog_router.message(F.text.lower() == 'ubisoft')
+@catalog_router.message(F.text.lower() == 'ubisoft😂')
 async def catalog_ubi(message: types.Message):
     photo = FSInputFile(r'img\catalog\ubi.jpg')
-    await message.answer_photo(photo, caption='Стоимость ключей от 300р')
+    text = '<b>Стоимость ключей от 300р</b>🤑'
+    await message.answer_photo(photo, caption=text)
 
 
-@catalog_router.message(F.text.lower() == 'ea')
+@catalog_router.message(F.text.lower() == 'ea🙌')
 async def catalog_ubi(message: types.Message):
     photo = FSInputFile(r'img\catalog\ea.png')
-    await message.answer_photo(photo, caption='Стоимость ключей от 200р')
+    text = '<b>Стоимость ключей от 200р</b>😍'
+    await message.answer_photo(photo, caption=text)
