@@ -1,6 +1,7 @@
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
+
 def addresses_kb():
     builder = InlineKeyboardBuilder()
     builder.row(
