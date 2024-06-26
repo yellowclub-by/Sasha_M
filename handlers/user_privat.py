@@ -1,5 +1,7 @@
 from aiogram import types, Router, F
 from aiogram.filters import CommandStart, Command
+from aiogram.types import FSInputFile
+
 from keyboards import reply, inline
 
 user_router = Router()
@@ -26,7 +28,7 @@ async def about(message: types.Message):
     text = '''<strong>Keys Store - это телеграм-бот для продажи лицензионных ключей от компьютерных игр.🤩</strong>\n
 Бот предлагает широкий выбор игр на различных платформах🎮. Пользователи могут искать, выбирать и покупать игровые ключи внутри бота.🤯\n
 <i>Оплата осуществляется различными способами, включая банковские карты и электронные платежные системы💳.</i> <b>Бот также предоставляет поддержку пользователей 24/7.</b>⏲️'''
-    await message.answer(text)
+    await message.answer(text, reply_markup=inline.links_kb)
 
 
 @user_router.message(F.text.lower() == "контакты🔔")
@@ -46,13 +48,18 @@ async def addresses(message: types.Message):
 async def addresses_type(callback: types.CallbackQuery):
     quare = callback.data.split('_')[1]
     if quare == '1':
-        await callback.message.answer("Rue des États-Unis")
+        photo = FSInputFile(r'img\addresses\address_1.png')
+        await callback.message.answer_photo(photo, caption="Rue des États-Unis")
+
     elif quare == '2':
-        await callback.message.answer("Weiermattweg 32")
+        photo = FSInputFile(r'img\addresses\address_2.png')
+        await callback.message.answer_photo(photo, caption="Weiermattweg 32")
     elif quare == '3':
-        await callback.message.answer("Rosenweg 27")
+        photo = FSInputFile(r'img\addresses\address_3.png')
+        await callback.message.answer_photo(photo, caption="Rosenweg 27")
     elif quare == '4':
-        await callback.message.answer("C. de María Nistal, 2-4")
+        photo = FSInputFile(r'img\addresses\address_4.png')
+        await callback.message.answer_photo(photo, caption="C. de María Nistal, 2-4")
     await callback.answer()
 
 
